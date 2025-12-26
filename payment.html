@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/payment.css">
+    <title>Payment</title>
+</head>
+<body>
+  <!--bootstrap-->
+  <main class="myForm">
+    <form id="form-container">
+      <div class="input_container">
+        <label for="name"><b>Name</b></label>
+        <input id="name" type="text" placeholder="Enter name" name="name" required>
+      </div>
+      <div class="input_container">
+        <label for="lname"><b>Last Name</b></label>
+        <input id="lname" type="text" placeholder="Enter last name" name="lname" required>
+      </div>
+      <div class="input_container">
+        <label for="tel"><b>Tel</b></label>
+        <input id="tel" type="tel" placeholder="Enter tel no" name="tel" required>
+      </div>
+      <div class="radio-group">
+        <label>Choose payment method</label>
+        <label for="door">Pay at the door</label>
+  <input type="radio" id="door" name="odeme" value="door" required>
+  <br>
+  <label for="cart">Credit cart:</label>
+  <input type="radio" id="cart" name="odeme" value="cart" required>
+      </div>
+      <div class="input_container">
+        <label for="Address"><b>Address</b></label>
+        <textarea id="Address" type="text" name="Address" rows="4" required></textarea>
+      </div>
+      <button>Submit</button>
+   </form>
+</main>
+
+<div class="main-popup">
+    <div class="popup">
+      <div class="popup-close">x</div>
+      <div class="popup-content">
+        <p style="font-size: 20px; margin-bottom: 30px;">Your address has been successfully received and your cargo will be on its way as soon as possible.</p>
+        <a href="index.html">Home page</a>
+      </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var form = document.getElementById("form-container");
+    var mainpopup = document.querySelector(".main-popup");
+    var popup = document.querySelector(".popup");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevents the form from submitting normally
+
+      // Validate the form inputs
+      if (validateForm()) {
+        // If the form is valid, show the message box
+        mainpopup.style.display = "block";
+        form.reset();
+      }
+    });
+
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var Lname = document.getElementById("lname").value;
+      var tel = document.getElementById("tel").value;
+      var Address = document.getElementById("Address").value;
+
+      return true; // Form is valid
+    }
+
+    // Close the message box when clicked
+    var close =document.querySelector(".popup-close");
+    close.addEventListener('click',()=>{
+      mainpopup.style.display='none';
+    },10);
+  });
+</script>      
+
+</body>
+</html>

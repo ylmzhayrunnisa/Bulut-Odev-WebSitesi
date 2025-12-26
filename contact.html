@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <!--Bootstrap CSS-->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Contact Us</title>
+</head>
+<body>
+ <section class="contact">
+  <div class="content">
+  <h2>Contact Us</h2>  
+  </div>
+  <div class="container">
+<div class="contactInfo">
+  <div class="box">
+    <div class="icon"><i class="fa-regular fa-address-card"></i></div>
+    <div class="text">
+      <h3>Address</h3>
+      <p>Ziya Gökalp, Mall Of İstanbul AVM, Süleyman Demirel Blv No:7 66 D:49B, 34490 İkitelli Osb/Başakşehir/İstanbul</p>
+    </div>
+  </div>
+  <div class="box">
+    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+    <div class="text">
+      <h3>Phone</h3>
+      <p>123-456-7890</p>
+    </div>
+  </div>
+  <div class="box">
+    <div class="icon"><i class="far fa-envelope"></i></div>
+    <div class="text">
+      <h3>Email</h3>
+      <p>ylmzhayrunnisa61@gmail.com</p>
+    </div>
+  </div>
+</div>
+<div class="contactForm">
+  <form id="form">
+    <h2>Send Message</h2>
+    <div class="inputBox">
+      <input type="text" name="" id="name" required>
+      <span>Name</span>   
+    </div>
+    <div class="inputBox">
+      <input type="number" min="18" max="60" id="age">
+      <span>Age</span>
+    </div>
+    <div class="inputBox">
+      <input type="email" name="" id="email" required>
+      <span>Email</span>
+    </div>
+    
+    <div class="inputBox">
+      <textarea id="message" required></textarea>
+      <span>Type your message...</span>
+    </div>
+    <div class="inputBox">
+      <input type="submit" value="send" required>
+    </div>
+  </form>
+</div>
+  </div>
+ </section>
+
+ <footer class="footer">
+  <div class="footer-left col-md-4 col-sm-6">
+    <p class="about">
+      <span> About the company</span>If you wish, you can shop from our store or online sales site.Shipping is free.
+      WE OFFER SERVICE 24/7.
+    </p>
+    <div class="icons">
+      <a href="#"><i class="fa-brands fa-square-facebook"></i></i></a>
+      <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-center col-md-4 col-sm-6">
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p>Istanbul,Turkey</p>
+    </div>
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>123-456-7890</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="#">ylmz@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-right col-md-4 col-sm-6">
+    <h2>HIRON</h2>
+    <p class="menu">
+      <a href="index.html"> Home</a> |
+      <a href="about.html"> About us</a> |
+      <a href="products.html"> Products</a> |
+      <a href="wingift.html"> Win a gift</a> |
+      <a href="blog.html"> Blog</a> |
+      <a href="contact.html"> Contact</a>
+    </p>
+    <p class="name"> HIRON &copy; 2016</p>
+  </div>
+</footer>
+<div class="MessageBox">
+  <div class="popup">
+    <div class="popup-close">x</div>
+    <div class="popup-content">
+      <p style="font-size: 20px; margin-bottom: 30px;">Your information has been successfully saved.</p>
+      <a href="index.html">Turn to home page</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var form = document.getElementById("form");
+    var body = document.querySelector(".body");
+    var messageBox = document.querySelector(".MessageBox");
+    var popup = document.querySelector(".popup");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevents the form from submitting normally
+
+      // Validate the form inputs
+      if (validateForm()) {
+        // If the form is valid, show the message box
+        messageBox.style.display = "block";
+        body.style.overflow = "hidden";
+        form.reset();
+      }
+    });
+
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      return true; // Form is valid
+    }
+
+    // Close the message box when clicked
+    var close =document.querySelector(".popup-close");
+    close.addEventListener('click',()=>{
+      messageBox.style.display='none';
+    },10);
+  });
+</script>
+
+</body>
+</html>
