@@ -65,7 +65,12 @@ Projenin canlıya alınması sırasında uygulanan adımlar ve kullanılan otoma
 
 ### Adım 1: Sunucu Hazırlığı
 AWS konsolu üzerinden Ubuntu 24.04 LTS işletim sistemine sahip sunucu oluşturulmuş, paket listeleri güncellenmiş ve Apache kurulmuştur.
-```bash
+### Adım 2: Kod Dağıtımı (Git Clone)
+Dosyalar manuel transfer yerine, sürdürülebilirlik adına Git entegrasyonu ile sunucuya çekilmiştir.
+### Adım 3: SSL Güvenlik Yapılandırması
+Apache SSL modülü aktif edilmiş ve servis yeniden başlatılmıştır.
+
+```bash 
 sudo apt update
 sudo apt install apache2 -y
 
