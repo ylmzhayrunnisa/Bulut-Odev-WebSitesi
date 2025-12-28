@@ -27,6 +27,7 @@ Bu çalışma iki ana odak noktasına sahiptir:
 ## Bulut Mimarisi ve Dağıtım Süreci
 
 Proje, AWS üzerinde güvenli ve ölçeklenebilir bir yapı üzerine kurulmuştur. Dağıtım sürecinde **CI/CD** mantığına uygun olarak kodlar GitHub üzerinden sunucuya çekilmiştir.
+<img width="857" height="468" alt="image" src="https://github.com/user-attachments/assets/6be2052a-b0c8-49b5-ba5a-744907f3721a" />
 
 
 ### Temel Yapılandırma Adımları:
