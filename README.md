@@ -1,60 +1,84 @@
-# Cilt Bakım Ürünleri Web Sitesi & AWS Bulut Dağıtımı
+# 🌿 AWS Üzerinde Statik Web Uygulaması Dağıtımı
 
-Bu proje, HTML, CSS ve JavaScript kullanılarak geliştirilmiş statik bir e-ticaret arayüzünün (Cilt Bakım Ürünleri), **Amazon Web Services (AWS)** bulut altyapısı üzerine taşınması, güvenli hale getirilmesi ve yayına alınması sürecini kapsar.
-
-## Proje Hakkında
-Bu çalışma iki ana odak noktasına sahiptir:
-1.  **Frontend Geliştirme:** Kullanıcı dostu, estetik ve responsive bir cilt bakım ürünleri satış sitesi arayüzü.
-2.  **DevOps & Cloud:** Yerel ortamda çalışan projenin, gerçek bir bulut sunucusunda canlıya alınması.
+Bu proje, **Bulut Bilişim** dersi kapsamında hazırlanmıştır. Yerel ortamda geliştirilen statik bir web uygulamasının, endüstri standardı olan **Amazon Web Services (AWS)** bulut sağlayıcısı üzerine taşınması, yapılandırılması ve yayınlanması sürecini kapsar.
 
 ---
 
-## Kullanılan Teknolojiler
-
-**Web Arayüzü:**
-* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) **HTML5**
-* ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) **CSS3**
-* ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) **JavaScript**
-
-**Bulut & Altyapı:**
-* ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white) **Amazon EC2 (t3.micro)**
-* ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white) **Ubuntu Server 24.04 LTS**
-* ![Apache](https://img.shields.io/badge/Apache-D22128?style=flat&logo=apache&logoColor=white) **Apache HTTP Server**
-* ![Git](https://img.shields.io/badge/GIT-E44C30?style=flat&logo=git&logoColor=white) **Git & GitHub**
+## 📑 İçindekiler
+1. [Proje Açıklaması ve Hedefleri](#1-proje-açıklaması-ve-hedefleri)
+2. [Uygulama Seçimi ve Teknolojiler](#2-uygulama-seçimi-ve-teknolojiler)
+3. [Bulut Platformu Seçimi](#3-bulut-platformu-seçimi)
+4. [Uygulama Mimarisi](#4-uygulama-mimarisi)
+5. [Dağıtım Süreci (Deployment)](#5-dağıtım-süreci-deployment)
+6. [Karşılaşılan Zorluklar ve Çözümler](#6-karşılaşılan-zorluklar-ve-çözümler)
+7. [Bağlantılar](#7-bağlantılar)
 
 ---
 
-## Bulut Mimarisi ve Dağıtım Süreci
+## 1. Proje Açıklaması ve Hedefleri
+Projenin temel amacı, sadece yazılım geliştirmek değil, **DevOps ve Bulut Dağıtım (Deployment)** süreçlerini deneyimlemektir.
 
-Proje, AWS üzerinde güvenli ve ölçeklenebilir bir yapı üzerine kurulmuştur. Dağıtım sürecinde **CI/CD** mantığına uygun olarak kodlar GitHub üzerinden sunucuya çekilmiştir.
+**Proje Hedefleri:**
+* Sanal sunucu (EC2) ve Linux işletim sistemi yönetimi becerilerinin kazanılması.
+* Ağ güvenliği (Security Groups) ve port yönetiminin deneyimlenmesi.
+* Git versiyon kontrol sistemi ile kodun canlı ortama taşınması.
+* SSL/TLS protokolü ile güvenli veri iletiminin (HTTPS) sağlanması.
+
+---
+
+## 2. Uygulama Seçimi ve Teknolojiler
+Proje kapsamında, dağıtım süreçlerine odaklanabilmek adına veritabanı bağımlılığı olmayan, **HTML, CSS ve JavaScript** ile geliştirilmiş statik bir **Cilt Bakım Ürünleri Satış Sitesi** tercih edilmiştir.
+
+**Kullanılan Teknolojiler:**
+* **Web Sunucusu:** Apache HTTP Server
+* **İşletim Sistemi:** Ubuntu Server 24.04 LTS
+* **Versiyon Kontrol:** Git & GitHub
+* **Programlama:** HTML, CSS, JavaScript
+* **Bulut Altyapısı:** AWS EC2 (t3.micro)
+
+---
+
+## 3. Bulut Platformu Seçimi
+Uygulama dağıtımı için **Amazon Web Services (AWS)** platformu tercih edilmiştir.
+
+**Seçim Gerekçeleri:**
+* **Pazar Payı:** Endüstride en çok kullanılan ve talep gören bulut sağlayıcısı olması.
+* **Maliyet Etkinliği:** **AWS Free Tier** (Ücretsiz Katman) kapsamında öğrencilere sunduğu 750 saatlik ücretsiz sunucu kullanım hakkı.
+* **Dokümantasyon:** Kapsamlı eğitim kaynaklarına ve topluluk desteğine sahip olması.
+
+---
+
+## 4. Uygulama Mimarisi
+Uygulamanın çalışma mantığı, kullanıcı erişimi ve geliştirici dağıtım süreçleri aşağıdaki şemada özetlenmiştir:
+
 <img width="857" height="468" alt="image" src="https://github.com/user-attachments/assets/6be2052a-b0c8-49b5-ba5a-744907f3721a" />
 
-
-### Temel Yapılandırma Adımları:
-1.  **Sunucu Kurulumu:** AWS EC2 üzerinde Ubuntu 24.04 sanal sunucu ayağa kaldırıldı.
-2.  **Güvenlik:** SSH (22), HTTP (80) ve HTTPS (443) portları yapılandırıldı.
-3.  **Web Sunucusu:** Apache servisi kuruldu ve optimize edildi.
-4.  **Deployment:** Proje dosyaları Git kullanılarak sunucuya dağıtıldı.
-5.  **SSL/TLS:** Self-Signed sertifika ile veri güvenliği (HTTPS) sağlandı.
+**Bileşenler:**
+* **İstemci:** Web tarayıcısı üzerinden HTTPS (Port 443) isteği gönderir.
+* **Security Group:** Sadece gerekli portlara (22, 80, 443) izin veren güvenlik duvarıdır.
+* **EC2 Instance:** Uygulamanın üzerinde çalıştığı Ubuntu tabanlı sanal sunucudur.
 
 ---
 
-## Kurulum Komutları (Deployment)
+## 5. Dağıtım Süreci (Deployment)
+Projenin canlıya alınması sırasında uygulanan adımlar ve kullanılan otomasyon komutları:
 
-Projenin canlı sunucuya alınması sırasında kullanılan temel otomasyon komutları:
-
+### Adım 1: Sunucu Hazırlığı
+AWS konsolu üzerinden Ubuntu 24.04 LTS işletim sistemine sahip sunucu oluşturulmuş, paket listeleri güncellenmiş ve Apache kurulmuştur.
 ```bash
-# 1. Sistem ve Paket Güncellemesi
 sudo apt update
 sudo apt install apache2 -y
 
-# 2. Projenin GitHub'dan Çekilmesi
+### Adım 2: Kod Dağıtımı (Git Clone)
+```bash
 cd /var/www/html
 sudo rm index.html
 sudo git clone [https://github.com/ylmzhayrunnisa/Bulut-Odev-WebSitesi.git](https://github.com/ylmzhayrunnisa/Bulut-Odev-WebSitesi.git)
 sudo mv Bulut-Odev-WebSitesi/* .
 
-# 3. SSL (HTTPS) Aktivasyonu
+### Adım 3: SSL Güvenlik Yapılandırması
+```bash
 sudo a2enmod ssl
 sudo a2ensite default-ssl
 sudo systemctl restart apache2
+
