@@ -89,6 +89,6 @@ sudo systemctl restart apache2
 
 ## 6. Karşılaşılan Zorluklar ve Çözümler
 **Bağlantı Sorunu:** Proje başlangıcında yerel terminal üzerinden sunucuya bağlanılmaya çalışıldığında ağ zaman aşımı hatasıyla karşılaşılmıştır. AWS güvenlik grubu ayarlarının doğru olduğu teyit edilmesine rağmen bağlantının kurulamaması üzerine, sorunun yerel ağ kısıtlamalarından kaynaklandığı düşünülmüştür. Bağlantı denemesinin yapıldığı yurt interneti (yerel ağ) altyapısında, güvenlik politikaları gereği Port 22 (SSH) çıkışlarının engellendiği düşünülmektedir. 
-* **Çözüm:** Sorunun yerel ağ kaynaklı olup olmadığını anlamak amacıyla alternatif bir yöntem olarak AWS'nin sunduğu "EC2 Instance Connect" (Tarayıcı Tabanlı Konsol) yöntemi test edilmiştir ve başarıyla giriş sağlanmıştır.  
+ **Çözüm:** Sorunun yerel ağ kaynaklı olup olmadığını anlamak amacıyla alternatif bir yöntem olarak AWS'nin sunduğu "EC2 Instance Connect" (Tarayıcı Tabanlı Konsol) yöntemi test edilmiştir ve başarıyla giriş sağlanmıştır.  
 **Güvenlik Uyarısı:** SSL ayarları öncesinde HTTPS üzerinden yapılan erişim denemelerinde "Bağlantı Reddedildi" hatası alınmış, kurulum sonrası ise "Güvenli Değil" uyarısı gözlemlenmiştir.
   **Çözüm:** Apache SSL modülleri aktif edilerek veri akışı şifreli hale getirilmiş; tarayıcıdaki uyarı "Gelişmiş" seçeneğiyle onaylanarak siteye başarılı erişim sağlanmıştır.
