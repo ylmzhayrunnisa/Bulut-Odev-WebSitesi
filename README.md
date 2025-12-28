@@ -76,14 +76,12 @@ sudo apt update
 sudo apt install apache2 -y
 
 ### Adım 2: Kod Dağıtımı (Git Clone)
-```bash
 cd /var/www/html
 sudo rm index.html
 sudo git clone [https://github.com/ylmzhayrunnisa/Bulut-Odev-WebSitesi.git](https://github.com/ylmzhayrunnisa/Bulut-Odev-WebSitesi.git)
 sudo mv Bulut-Odev-WebSitesi/* .
 
 ### Adım 3: SSL Güvenlik Yapılandırması
-```bash
 sudo a2enmod ssl
 sudo a2ensite default-ssl
 sudo systemctl restart apache2
