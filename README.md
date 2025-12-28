@@ -93,3 +93,8 @@ sudo systemctl restart apache2
 
 **Güvenlik Uyarısı:** SSL ayarları öncesinde HTTPS üzerinden yapılan erişim denemelerinde "Bağlantı Reddedildi" hatası alınmış, kurulum sonrası ise "Güvenli Değil" uyarısı gözlemlenmiştir.
 * **Çözüm:** Apache SSL modülleri aktif edilerek veri akışı şifreli hale getirilmiş; tarayıcıdaki uyarı "Gelişmiş" seçeneğiyle onaylanarak siteye başarılı erişim sağlanmıştır.
+
+## 7. Bağlantılar
+Aşağıda ödev sunumunu yapmış olduğum video linkim bulunmaktadır.
+
+https://youtu.be/Wo33EaYm-Po
