@@ -1,10 +1,10 @@
-# 🌿 AWS Üzerinde Statik Web Uygulaması Dağıtımı
+#  AWS Üzerinde Statik Web Uygulaması Dağıtımı
 
 Bu proje, **Bulut Bilişim** dersi kapsamında hazırlanmıştır. Yerel ortamda geliştirilen statik bir web uygulamasının, endüstri standardı olan **Amazon Web Services (AWS)** bulut sağlayıcısı üzerine taşınması, yapılandırılması ve yayınlanması sürecini kapsar.
 
 ---
 
-## 📑 İçindekiler
+##  İçindekiler
 1. [Proje Açıklaması ve Hedefleri](#1-proje-açıklaması-ve-hedefleri)
 2. [Uygulama Seçimi ve Teknolojiler](#2-uygulama-seçimi-ve-teknolojiler)
 3. [Bulut Platformu Seçimi](#3-bulut-platformu-seçimi)
@@ -70,7 +70,8 @@ Dosyalar manuel transfer yerine, sürdürülebilirlik adına Git entegrasyonu il
 ### Adım 3: SSL Güvenlik Yapılandırması
 Apache SSL modülü aktif edilmiş ve servis yeniden başlatılmıştır.
 
-```bash 
+```bash
+### Adım 1: Sunucu Hazırlığı
 sudo apt update
 sudo apt install apache2 -y
 
